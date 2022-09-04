@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert new employee in system</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+	<h1>Employee Management System</h1>
+	<hr>
+	<h2>Save Employee</h2>
+	<a th:href="@{/}" class="btn"> Back to home</a>
+	<form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="post">
+		<input type="hidden" th:field="*{id}">
+		<input th:field="*{firstName}" type="text" placeholder="Enter the First Name of employee" class="form-control mb-4 col-4">
+		<input th:field="*{lastName}" type="text" placeholder="Enter the Last Name of employee" class="form-control mb-4 col-4">
+		<input th:field="*{email}" type="text" placeholder="Enter the Email of employee" class="form-control mb-4 col-4">
+		<button type="submit" class="btn btn-info col-2">Update Employee</button>
+	</form>
+	
+</div>
+</body>
+</html>
